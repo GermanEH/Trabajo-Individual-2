@@ -25,8 +25,8 @@ import {
 
 //Pokeball
 
-    // ADD_POKEMON_CAPTURED,
-    // REMOVE_POKEMON_CAPTURED,
+    ADD_ADOPTED,
+    REMOVE_ADOPTED,
 
 //Renderization
 
@@ -77,9 +77,11 @@ export const getTemperaments = () => {
         try {
             const response = await api.get('http://localhost:3001/temperaments')
             if(!!response.err) {
+                console.log('entramos al error')
                 let error = `Error ${response.status}: ${response.statusText}`
-                dispatch({type: ERROR, payload: error})
+                return dispatch({type: ERROR, payload: error})
             } else if (!!response.data) {
+                console.log('entramos al exito')
                 const data = response.data.sort(function(a,b) {
                     if(a.name < b.name) return -1;
                     if(a.name > b.name) return 1;
@@ -88,6 +90,7 @@ export const getTemperaments = () => {
                 dispatch({type: GET_TEMPERAMENTS, payload: data})
                 return data}
         } catch (error) {
+            console.log(error)
             dispatch({type: ERROR, payload: error.message})
         }
     }
@@ -96,9 +99,12 @@ export const getTemperaments = () => {
 export const getDog = (dog, dogs) => {
     return async function (dispatch) { 
         try {
-            if(/[a-zA-Z]/g.test(dog) && /[0-9._-]/g.test(dog)) return dispatch({type: ERROR, payload: 'Please insert valid name or id'})
+            // if() {
+            //     const response = await api.get(`http://localhost:3001/dogs/${dog}`)
+            //     return dispatch({type: ERROR, payload: 'Please insert valid name or id'})
+            // }
             if(dog.length === 0) return dispatch({type: ERROR, payload: 'Please insert valid name or id'})
-            if (!isNaN(dog)){
+            if (!isNaN(dog) || (/[a-zA-Z]/g.test(dog) && /[0-9._-]/g.test(dog))){
                 const response = await api.get(`http://localhost:3001/dogs/${dog}`)
                 if(!!response.err) {
                     let error = `Error ${response.status}: ${response.statusText}`
@@ -143,7 +149,6 @@ export const createDog = (dog) => {
                 maxLifeSpan: dog.maxLifeSpan,
                 temperament: dog.temperaments,
             }
-            console.log(newDog)
             const response = await axios.post('http://localhost:3001/dogs', newDog)
             if(!!response.err) {
                 let error = `Error ${response.status}: ${response.statusText}`
@@ -304,20 +309,21 @@ export const cleanMessage = () => {
         type: CLEAN_MESSAGE
     }
 }
-// export function addCapture (payload) {
-//     return {
-//         type: ADD_POKEMON_CAPTURED,
-//         payload
-//     }
-// }
 
-// export function removeCapture (payload) {
-//     return {
-//         type: REMOVE_POKEMON_CAPTURED,
-//         payload
-//     }
-// }
-
+export const adoption = (dog, adopted) => {
+    return function(dispatch) {
+        try {
+            console.log(adopted)
+            for (const d of adopted) {
+                if(d.name === dog.name) {return dispatch({type: REMOVE_ADOPTED, payload: dog.name})}
+            } return dispatch({type: ADD_ADOPTED, payload: dog})
+        } catch (error) {
+            dispatch({type: ERROR, payload: error.message})
+        } finally {
+            console.log('done')
+        }
+    }
+}
 
 
 //ver lo de return dispatch (algunos no tienen return)

@@ -22,8 +22,8 @@ import {
 
 //Pokeball
 
-    // ADD_POKEMON_CAPTURED,
-    // REMOVE_POKEMON_CAPTURED,
+    ADD_ADOPTED,
+    REMOVE_ADOPTED,
 
 //Renderization
 
@@ -44,7 +44,7 @@ const initialState = {
     temperament: [],
     someDogs: [],
     dog: {},
-    // pokemonsCaptured: [],
+    adopted: [],
     filtered: [],
     selectedFilters: [],
     error: null,
@@ -155,6 +155,16 @@ export default function rootReducer (state = initialState, action) {
             return {
                 ...state,
                 message: "",
+            }
+        case ADD_ADOPTED:
+            return {
+                ...state,
+                adopted: [...state.adopted, action.payload]
+            }
+        case REMOVE_ADOPTED:
+            return {
+                ...state,
+                adopted: state.adopted.filter(d => d.name !== action.payload)
             }
                 default: 
                 return state;

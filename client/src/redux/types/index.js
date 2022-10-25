@@ -25,8 +25,8 @@ export const SORT_DOGS_BY_WEIGHT = 'SORT_DOGS_BY_WEIGHT'
 
 //Pokeball
 
-// export const ADD_POKEMON_CAPTURED = 'ADD_POKEMON_CAPTURED'
-// export const REMOVE_POKEMON_CAPTURED = 'REMOVE_POKEMON_CAPTURED'
+export const ADD_ADOPTED = 'ADD_ADOPTED'
+export const REMOVE_ADOPTED = 'REMOVE_ADOPTED'
 
 //Renderization
 

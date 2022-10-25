@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector} from 'react-redux'
 import style from '../../assets/styles/DogCard.module.css';
 import logo from '../../assets/images/huella_de_perro.png'
 import { Link } from "react-router-dom";
+import { adoption } from "../../redux/actions"
 
-export default function DogCard ({image, name, temperament, weight, id, addAdoption}) {
+export default function DogCard ({image, name, temperament, weight, id}) {
 
-    const [adopted, setAdopted] = useState(false)
+    const adopted = useSelector(state => state.adopted)
+    const dispatch = useDispatch()
 
     let dogData = {image, name, temperament, weight, id}
     function handleAdoption(e){
-        if (adopted === false) {setAdopted(true)}
-        else {setAdopted(false)}
-        addAdoption(dogData)
+        dispatch(adoption(dogData, adopted))
     }
                         //className={`pokemon-card ${(captured===true) ? 'pokemon_captured' : 'pokemon_savage'}`}
 

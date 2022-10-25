@@ -1,0 +1,16 @@
+.search_input {
+    background-color: rgb(115, 140, 169);
+    height:25px;
+    border-radius:5px;
+    border:none;
+    color:rgb(21, 51, 88);
+}
+
+.lupa {
+    height:20px;
+    width:20px;
+    background-color:none;
+    position:relative;
+    right:25px;
+    top:5px;
+}
