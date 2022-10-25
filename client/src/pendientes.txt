@@ -1,0 +1,72 @@
+Título: The Smarty Dog
+
+1. Error handling                                             ||        jueves          HECHO (errores de conexión rutas front, rutas back, otros errores)
+2. unmount (return en useEffect)                              ||        jueves          HECHO (en detail y en searchbar, ver si agregar otro)
+3. carga de ítems repetidos EN FORMS                          ||        jueves          HECHO (con names, ver img)
+4. números de página y flechas, indica en qué página está.    ||        jueves          HECHO (sólo faltaría flechas)
+
+¿simplifico el reducer (cantidad de estados)?
+¿manejo de errores en el reducer?
+¿renderizado de mensaje - error - filtered?
+
+6. paginado combinado con filtrado y searchbar                ||        viernes         HECHO
+    si la búsqueda da 7 págs. x ej, y vuelvo a dogs, se queda en la 7 (vacía)                   --> aumentar la cant de allDogs
+7. buenas prácticas de API rest (rutas backend)               ||        viernes
+8. helpers en el back                                         ||        viernes         HECHO (se pueden mejorar)
+    uno para APIKEY (x las dudas, lo pide el readme - ESTÁ EN ENV x PEDIDO DEL README)
+9. refactorizado                                              ||        viernes
+
+Trabajar en la UI (ver modelos de páginas) + botones seleccionados oscuros              ||     sábado
+    a. los filtros y los sorters, todos del mismo lado (arriba, abajo o al costado)     ||     sábado
+    b. emparejar y darle forma a las cards                                              ||     sábado   
+    c. darle mejor aspecto visual al paginado                                           ||     sábado
+    d. darle estilo al campo de filtros                                                 ||     sábado
+        agregar FavIcon
+
+10. Extra Credit (adopción)                                   ||        domingo
+11. CRUD completo (update -put- y delete)                     ||        domingo
+12. Testing profundo                                          ||        domingo
+
+13. Deploying                                                 ||        lunes
+14. Preparar presentación                                     ||        lunes
+
+configuración de ERROR 404: PAGE NOT FOUND                    ||                        HECHO
+
+
+RENDERIZADO CONDICIONAL DEL FORM SEGÚN EL IDIOMA (y usando keys - ver clase)
+
+AGREGAR MODO NOCHE
+
+
+evaluar si renderizar condicionalmente dogs / someDogs / dog
+
+
+en la ruta post, me tira el error que configure y "conection reset" cuando quiero usar el helper.
+por ahora dejé axios en esa ruta.
+
+
+agregar dos columnas a la BD (x las dudas, una metrica y una imperial, por peso y altura, Y VER QUÉ FUNCIÓN RECUPERA FUERA DEL SCOPE)
+
+
+
+
+UX / UI 
+
+Modo standard:
+
+bgColor(gradiente liso): A4B6CC  4D6B8F - claro-opuesto
+
+ 738CA9   -   claro intermedio (para texto interior)
+
+    combinación: 153358 -   oscuro 
+
+color: B3E190           -  verde claro
+    combinación: 235100 -  preferí este:   163200 -   oscuro  (para texto exterior)
+
+Modo noche:
+
+bgColor(liso): 051E3C
+    combinación: 4A688C
+
+color: B7E395
+    combinación: 407715

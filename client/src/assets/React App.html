@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:3000/home -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsU0FBUztFQUNUOztjQUVZO0VBQ1osbUNBQW1DO0VBQ25DLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFO2FBQ1c7QUFDYiIsInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsICdSb2JvdG8nLCAnT3h5Z2VuJyxcbiAgICAnVWJ1bnR1JywgJ0NhbnRhcmVsbCcsICdGaXJhIFNhbnMnLCAnRHJvaWQgU2FucycsICdIZWx2ZXRpY2EgTmV1ZScsXG4gICAgc2Fucy1zZXJpZjtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG59XG5cbmNvZGUge1xuICBmb250LWZhbWlseTogc291cmNlLWNvZGUtcHJvLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JyxcbiAgICBtb25vc3BhY2U7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.App {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  background: url(/static/media/grass2.b5403c54.jpg);
+  background-repeat: repeat;
+  background-size: 1300px 800px; 
+  height:1400px;
+}
+/* url(), 
+no-repeat,  */
+/* 1400px 200px,  */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-top:200px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.banner_to_home {
+  position:absolute;
+  width:1400px;
+  height: 200px
+}
+
+.landing {
+  margin-top:80px;
+  font-size: 30px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvQXBwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsa0JBQWtCO0VBQ2xCLG1EQUFzQztFQUN0Qyx5QkFBeUI7RUFDekIsNkJBQTZCO0VBQzdCLGFBQWE7QUFDZjtBQUNBO2FBQ2E7QUFDYixtQkFBbUI7O0FBRW5CO0VBQ0UsY0FBYztFQUNkLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFO0lBQ0UsNENBQTRDO0VBQzlDO0FBQ0Y7O0FBRUE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsNkJBQTZCO0VBQzdCLFlBQVk7RUFDWixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0U7SUFDRSx1QkFBdUI7RUFDekI7RUFDQTtJQUNFLHlCQUF5QjtFQUMzQjtBQUNGOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWjtBQUNGOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGVBQWU7QUFDakIiLCJzb3VyY2VzQ29udGVudCI6WyIuQXBwIHtcbiAgZGlzcGxheTpmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJhY2tncm91bmQ6IHVybChcIi4vYXNzZXRzL2dyYXNzMi5qcGdcIik7XG4gIGJhY2tncm91bmQtcmVwZWF0OiByZXBlYXQ7XG4gIGJhY2tncm91bmQtc2l6ZTogMTMwMHB4IDgwMHB4OyBcbiAgaGVpZ2h0OjE0MDBweDtcbn1cbi8qIHVybCgpLCBcbm5vLXJlcGVhdCwgICovXG4vKiAxNDAwcHggMjAwcHgsICAqL1xuXG4uQXBwLWxvZ28ge1xuICBoZWlnaHQ6IDQwdm1pbjtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbkBtZWRpYSAocHJlZmVycy1yZWR1Y2VkLW1vdGlvbjogbm8tcHJlZmVyZW5jZSkge1xuICAuQXBwLWxvZ28ge1xuICAgIGFuaW1hdGlvbjogQXBwLWxvZ28tc3BpbiBpbmZpbml0ZSAyMHMgbGluZWFyO1xuICB9XG59XG5cbi5BcHAtaGVhZGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZvbnQtc2l6ZTogY2FsYygxMHB4ICsgMnZtaW4pO1xuICBjb2xvcjogd2hpdGU7XG4gIG1hcmdpbi10b3A6MjAwcHg7XG59XG5cbi5BcHAtbGluayB7XG4gIGNvbG9yOiAjNjFkYWZiO1xufVxuXG5Aa2V5ZnJhbWVzIEFwcC1sb2dvLXNwaW4ge1xuICBmcm9tIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgfVxuICB0byB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTtcbiAgfVxufVxuXG4uYmFubmVyX3RvX2hvbWUge1xuICBwb3NpdGlvbjphYnNvbHV0ZTtcbiAgd2lkdGg6MTQwMHB4O1xuICBoZWlnaHQ6IDIwMHB4XG59XG5cbi5sYW5kaW5nIHtcbiAgbWFyZ2luLXRvcDo4MHB4O1xuICBmb250LXNpemU6IDMwcHg7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.home {
+    display:flex;
+    flex-direction: row;
+    margin-top:50px;
+}
+
+.column-right {
+    width:15%;
+}
+
+.columne-left {
+    width:25%
+}
+
+.column-left {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+/* 
+.filters {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} */
+.temperaments {
+    /* d
+    justify-content: center; */
+    /* margin-right:50px;
+    margin-left:50px;
+    row-gap: 10px;
+    column-gap: 20px; */
+}
+
+.home-body {
+    width: 60%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dogs {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin-top:60px;
+    color:blue;
+    font-weight: bold;
+    width: 100%;
+    height: 80%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    width:100%;
+    height:50%;
+}
+
+.pagination {
+    width:120px;
+    height: 50px;
+    border:black solid 1px;
+    border-radius: 5px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9jb250YWluZXJzL0hvbWUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksU0FBUztBQUNiOztBQUVBO0lBQ0k7QUFDSjs7QUFFQTtJQUNJLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsZUFBZTtBQUNuQjtBQUNBOzs7Ozs7R0FNRztBQUNIO0lBQ0k7OEJBQzBCO0lBQzFCOzs7dUJBR21CO0FBQ3ZCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHVCQUF1QjtBQUMzQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixjQUFjO0lBQ2QsdUJBQXVCO0lBQ3ZCLGVBQWU7SUFDZixVQUFVO0lBQ1YsaUJBQWlCO0lBQ2pCLFdBQVc7SUFDWCxXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLHVCQUF1QjtJQUN2QixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFVBQVU7QUFDZDs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osc0JBQXNCO0lBQ3RCLGtCQUFrQjtBQUN0QiIsInNvdXJjZXNDb250ZW50IjpbIi5ob21lIHtcclxuICAgIGRpc3BsYXk6ZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBtYXJnaW4tdG9wOjUwcHg7XHJcbn1cclxuXHJcbi5jb2x1bW4tcmlnaHQge1xyXG4gICAgd2lkdGg6MTUlO1xyXG59XHJcblxyXG4uY29sdW1uZS1sZWZ0IHtcclxuICAgIHdpZHRoOjI1JVxyXG59XHJcblxyXG4uY29sdW1uLWxlZnQge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246cm93O1xyXG4gICAgZmxleC13cmFwOiB3cmFwO1xyXG59XHJcbi8qIFxyXG4uZmlsdGVycyB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxufSAqL1xyXG4udGVtcGVyYW1lbnRzIHtcclxuICAgIC8qIGRcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOyAqL1xyXG4gICAgLyogbWFyZ2luLXJpZ2h0OjUwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDo1MHB4O1xyXG4gICAgcm93LWdhcDogMTBweDtcclxuICAgIGNvbHVtbi1nYXA6IDIwcHg7ICovXHJcbn1cclxuXHJcbi5ob21lLWJvZHkge1xyXG4gICAgd2lkdGg6IDYwJTtcclxuICAgIGRpc3BsYXk6ZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOnJvdztcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4uZG9ncyB7XHJcbiAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICBmbGV4LXdyYXA6d3JhcDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDo2MHB4O1xyXG4gICAgY29sb3I6Ymx1ZTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDgwJTtcclxufVxyXG5cclxuLmZvb3RlciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6Y2VudGVyO1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIGhlaWdodDo1MCU7XHJcbn1cclxuXHJcbi5wYWdpbmF0aW9uIHtcclxuICAgIHdpZHRoOjEyMHB4O1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgYm9yZGVyOmJsYWNrIHNvbGlkIDFweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.filters {
+    width: 100%;
+}
+
+.h3, .h4, .temperaments {
+    width: 100%;
+}
+
+.temperaments {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.temperament {
+    width: 33%;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9yZW5kZXJzL0ZpbHRlcnMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJzb3VyY2VzQ29udGVudCI6WyIuZmlsdGVycyB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLmgzLCAuaDQsIC50ZW1wZXJhbWVudHMge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi50ZW1wZXJhbWVudHMge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC13cmFwOndyYXA7XHJcbn1cclxuXHJcbi50ZW1wZXJhbWVudCB7XHJcbiAgICB3aWR0aDogMzMlO1xyXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>/* .options {
+    width:150px;
+    height:25px
+} */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9yZW5kZXJzL1NvcnRlcnMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7R0FHRyIsInNvdXJjZXNDb250ZW50IjpbIi8qIC5vcHRpb25zIHtcclxuICAgIHdpZHRoOjE1MHB4O1xyXG4gICAgaGVpZ2h0OjI1cHhcclxufSAqLyJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.dog-card {
+    color: red;
+    width: 200px;
+    height:215px;
+    border: 1px solid black;
+    border-radius:5px;
+    margin: 8px;
+}
+
+/* .pokemon_captured {
+    background-color: blue;
+} */
+
+/* .pokemon_savage{
+    background-color: beige;
+} */
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9yZW5kZXJzL0RvZ0NhcmQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7SUFDWixZQUFZO0lBQ1osdUJBQXVCO0lBQ3ZCLGlCQUFpQjtJQUNqQixXQUFXO0FBQ2Y7O0FBRUE7O0dBRUc7O0FBRUg7O0dBRUciLCJzb3VyY2VzQ29udGVudCI6WyIuZG9nLWNhcmQge1xyXG4gICAgY29sb3I6IHJlZDtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDoyMTVweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgYm9yZGVyLXJhZGl1czo1cHg7XHJcbiAgICBtYXJnaW46IDhweDtcclxufVxyXG5cclxuLyogLnBva2Vtb25fY2FwdHVyZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmx1ZTtcclxufSAqL1xyXG5cclxuLyogLnBva2Vtb25fc2F2YWdle1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmVpZ2U7XHJcbn0gKi9cclxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.nav-bar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color:aliceblue;
+    font-size: large;
+    height: 50px;
+    width: 100%;
+    background-color:red;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9jb250YWluZXJzL05hdkJhci5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLDZCQUE2QjtJQUM3QixtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixZQUFZO0lBQ1osV0FBVztJQUNYLG9CQUFvQjtBQUN4QiIsInNvdXJjZXNDb250ZW50IjpbIi5uYXYtYmFyIHtcclxuICAgIGRpc3BsYXk6ZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBjb2xvcjphbGljZWJsdWU7XHJcbiAgICBmb250LXNpemU6IGxhcmdlO1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJlZDtcclxufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.newPokemon {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:80px;
+}
+
+.form {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    width:60%;
+}
+
+.column-left{
+    width:30%;
+}
+
+.red_table {
+    background-color:red;
+    border: black solid 5px;
+    margin-bottom:40px;
+}
+.pokemonItem {
+    padding: 10px;
+    height: 20px;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.types {
+    justify-content: center;
+    color:black
+}
+
+.empty {
+    height:15px;
+}
+
+.validator {
+    font-weight:bold;
+    font-size:10px;
+}
+
+.button-disabled {
+    background-color:grey;
+    color:black;
+    border-radius:2px;
+    height:60px;
+    width:180px
+}
+
+.button {
+    background-color:rgb(33, 33, 233);
+    color:white;
+    border-radius:2px;
+    height:60px;
+    width:180px
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9jb250YWluZXJzL0Zvcm0uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLG1CQUFtQjtJQUNuQix1QkFBdUI7SUFDdkIsZUFBZTtJQUNmLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxZQUFZO0lBQ1oscUJBQXFCO0lBQ3JCLHVCQUF1QjtJQUN2QixrQkFBa0I7SUFDbEIsU0FBUztBQUNiOztBQUVBO0lBQ0ksU0FBUztBQUNiOztBQUVBO0lBQ0ksb0JBQW9CO0lBQ3BCLHVCQUF1QjtJQUN2QixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLGFBQWE7SUFDYixZQUFZO0lBQ1osWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSx1QkFBdUI7SUFDdkI7QUFDSjs7QUFFQTtJQUNJLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixjQUFjO0FBQ2xCOztBQUVBO0lBQ0kscUJBQXFCO0lBQ3JCLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsV0FBVztJQUNYO0FBQ0o7O0FBRUE7SUFDSSxpQ0FBaUM7SUFDakMsV0FBVztJQUNYLGlCQUFpQjtJQUNqQixXQUFXO0lBQ1g7QUFDSiIsInNvdXJjZXNDb250ZW50IjpbIi5uZXdQb2tlbW9uIHtcclxuICAgIGRpc3BsYXk6ZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgIG1hcmdpbi10b3A6ODBweDtcclxufVxyXG5cclxuLmZvcm0ge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246Y29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICB3aWR0aDo2MCU7XHJcbn1cclxuXHJcbi5jb2x1bW4tbGVmdHtcclxuICAgIHdpZHRoOjMwJTtcclxufVxyXG5cclxuLnJlZF90YWJsZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJlZDtcclxuICAgIGJvcmRlcjogYmxhY2sgc29saWQgNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTo0MHB4O1xyXG59XHJcbi5wb2tlbW9uSXRlbSB7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgaGVpZ2h0OiAyMHB4O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC1zaXplOiBsYXJnZTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkZXI7XHJcbn1cclxuXHJcbi50eXBlcyB7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGNvbG9yOmJsYWNrXHJcbn1cclxuXHJcbi5lbXB0eSB7XHJcbiAgICBoZWlnaHQ6MTVweDtcclxufVxyXG5cclxuLnZhbGlkYXRvciB7XHJcbiAgICBmb250LXdlaWdodDpib2xkO1xyXG4gICAgZm9udC1zaXplOjEwcHg7XHJcbn1cclxuXHJcbi5idXR0b24tZGlzYWJsZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpncmV5O1xyXG4gICAgY29sb3I6YmxhY2s7XHJcbiAgICBib3JkZXItcmFkaXVzOjJweDtcclxuICAgIGhlaWdodDo2MHB4O1xyXG4gICAgd2lkdGg6MTgwcHhcclxufVxyXG5cclxuLmJ1dHRvbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJnYigzMywgMzMsIDIzMyk7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6MnB4O1xyXG4gICAgaGVpZ2h0OjYwcHg7XHJcbiAgICB3aWR0aDoxODBweFxyXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.pokemon-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width:auto;
+    height:600px;
+    background-image:url("https://i.pinimg.com/originals/ca/fe/c2/cafec2809887a1c37c83d9ebbc953252.jpg");
+    background-size:1350px 610px;
+}
+
+.pokemon-head {
+    width:50%;
+    color:aliceblue;
+    font-size: 26px;
+}
+
+.pokemon-info {
+    width:50%;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.pokemon-data {
+    width:300px;
+    height:500px;
+    background-color:red;
+    color:aliceblue;
+}
+
+.pokemon-stat {
+    padding: 15px;
+    margin-top: 10px;
+    border-bottom: 5px solid aliceblue;
+}
+
+
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9yZW5kZXJzL0RvZ0RldGFpbC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLHVCQUF1QjtJQUN2QixxQkFBcUI7SUFDckIsbUJBQW1CO0lBQ25CLFVBQVU7SUFDVixZQUFZO0lBQ1osb0dBQW9HO0lBQ3BHLDRCQUE0QjtBQUNoQzs7QUFFQTtJQUNJLFNBQVM7SUFDVCxlQUFlO0lBQ2YsZUFBZTtBQUNuQjs7QUFFQTtJQUNJLFNBQVM7SUFDVCxtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLHFCQUFxQjtJQUNyQixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLG9CQUFvQjtJQUNwQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixrQ0FBa0M7QUFDdEMiLCJzb3VyY2VzQ29udGVudCI6WyIucG9rZW1vbi1jb250YWluZXIge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24tY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIHdpZHRoOmF1dG87XHJcbiAgICBoZWlnaHQ6NjAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOnVybChcImh0dHBzOi8vaS5waW5pbWcuY29tL29yaWdpbmFscy9jYS9mZS9jMi9jYWZlYzI4MDk4ODdhMWMzN2M4M2Q5ZWJiYzk1MzI1Mi5qcGdcIik7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6MTM1MHB4IDYxMHB4O1xyXG59XHJcblxyXG4ucG9rZW1vbi1oZWFkIHtcclxuICAgIHdpZHRoOjUwJTtcclxuICAgIGNvbG9yOmFsaWNlYmx1ZTtcclxuICAgIGZvbnQtc2l6ZTogMjZweDtcclxufVxyXG5cclxuLnBva2Vtb24taW5mbyB7XHJcbiAgICB3aWR0aDo1MCU7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG4ucG9rZW1vbi1kYXRhIHtcclxuICAgIHdpZHRoOjMwMHB4O1xyXG4gICAgaGVpZ2h0OjUwMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpyZWQ7XHJcbiAgICBjb2xvcjphbGljZWJsdWU7XHJcbn1cclxuXHJcbi5wb2tlbW9uLXN0YXQge1xyXG4gICAgcGFkZGluZzogMTVweDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBib3JkZXItYm90dG9tOiA1cHggc29saWQgYWxpY2VibHVlO1xyXG59XHJcblxyXG5cclxuXHJcbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>[_nghost-dfd-c50]{font-family:Open Sans,sans-serif;color:#121212}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><a href="http://localhost:3000/"><div class="banner_to_home"></div></a><header class="App-header"><nav class="nav-bar"><a href="http://localhost:3000/home" style="text-decoration: none; color: white;">Home</a><a href="http://localhost:3000/dog/create" style="text-decoration: none; color: white;">Create New Dog</a><a href="http://localhost:3000/dogKennel" style="text-decoration: none; color: white;">Dog Kennel</a><div><form data-dashlane-rid="379cef11d168e21a" data-form-type=""><input type="text" placeholder="Dog..." value="" data-dashlane-rid="2ad2d41e93e5a8ee" data-form-type=""><input type="submit" value="Search" data-dashlane-rid="b961dec01ac20469" data-form-type=""></form></div></nav></header><div class="body"><div class="home"><div class="column-left"><div class="filters"><h3>Filtrar por...</h3><h4>Temperamento</h4><div class="temperaments"><div class="temperament"><input type="checkbox">Stubborn</div><div class="temperament"><input type="checkbox">Curious</div><div class="temperament"><input type="checkbox">Playful</div><div class="temperament"><input type="checkbox">Adventurous</div><div class="temperament"><input type="checkbox">Active</div><div class="temperament"><input type="checkbox">Fun-loving</div><div class="temperament"><input type="checkbox">Aloof</div><div class="temperament"><input type="checkbox">Clownish</div><div class="temperament"><input type="checkbox">Dignified</div><div class="temperament"><input type="checkbox">Independent</div><div class="temperament"><input type="checkbox">Happy</div><div class="temperament"><input type="checkbox">Wild</div><div class="temperament"><input type="checkbox">Hardworking</div><div class="temperament"><input type="checkbox">Dutiful</div><div class="temperament"><input type="checkbox">Outgoing</div><div class="temperament"><input type="checkbox">Friendly</div><div class="temperament"><input type="checkbox">Alert</div><div class="temperament"><input type="checkbox">Confident</div><div class="temperament"><input type="checkbox">Intelligent</div><div class="temperament"><input type="checkbox">Courageous</div><div class="temperament"><input type="checkbox">Loyal</div><div class="temperament"><input type="checkbox">Brave</div><div class="temperament"><input type="checkbox">Docile</div><div class="temperament"><input type="checkbox">Responsive</div><div class="temperament"><input type="checkbox">Composed</div><div class="temperament"><input type="checkbox">Receptive</div><div class="temperament"><input type="checkbox">Faithful</div><div class="temperament"><input type="checkbox">Loving</div><div class="temperament"><input type="checkbox">Protective</div><div class="temperament"><input type="checkbox">Trainable</div><div class="temperament"><input type="checkbox">Responsible</div><div class="temperament"><input type="checkbox">Energetic</div><div class="temperament"><input type="checkbox">Gentle</div><div class="temperament"><input type="checkbox">Affectionate</div><div class="temperament"><input type="checkbox">Devoted</div><div class="temperament"><input type="checkbox">Assertive</div><div class="temperament"><input type="checkbox">Dominant</div><div class="temperament"><input type="checkbox">Strong Willed</div><div class="temperament"><input type="checkbox">Obedient</div><div class="temperament"><input type="checkbox">Reserved</div><div class="temperament"><input type="checkbox">Kind</div><div class="temperament"><input type="checkbox">Sweet-Tempered</div><div class="temperament"><input type="checkbox">Tenacious</div><div class="temperament"><input type="checkbox">Attentive</div><div class="temperament"><input type="checkbox">Steady</div><div class="temperament"><input type="checkbox">Bold</div><div class="temperament"><input type="checkbox">Proud</div><div class="temperament"><input type="checkbox">Reliable</div><div class="temperament"><input type="checkbox">Fearless</div><div class="temperament"><input type="checkbox">Lively</div><div class="temperament"><input type="checkbox">Self-assured</div><div class="temperament"><input type="checkbox">Cautious</div><div class="temperament"><input type="checkbox">Eager</div><div class="temperament"><input type="checkbox">Good-natured</div><div class="temperament"><input type="checkbox">Spirited</div><div class="temperament"><input type="checkbox">Companionable</div><div class="temperament"><input type="checkbox">Even Tempered</div><div class="temperament"><input type="checkbox">Rugged</div><div class="temperament"><input type="checkbox">Fierce</div><div class="temperament"><input type="checkbox">Refined</div><div class="temperament"><input type="checkbox">Joyful</div><div class="temperament"><input type="checkbox">Agile</div><div class="temperament"><input type="checkbox">Amiable</div><div class="temperament"><input type="checkbox">Excitable</div><div class="temperament"><input type="checkbox">Determined</div><div class="temperament"><input type="checkbox">Self-confidence</div><div class="temperament"><input type="checkbox">Hardy</div><div class="temperament"><input type="checkbox">Calm</div><div class="temperament"><input type="checkbox">Good-tempered</div><div class="temperament"><input type="checkbox">Watchful</div><div class="temperament"><input type="checkbox">Hard-working</div><div class="temperament"><input type="checkbox">Feisty</div><div class="temperament"><input type="checkbox">Cheerful</div><div class="temperament"><input type="checkbox">Sensitive</div><div class="temperament"><input type="checkbox">Easygoing</div><div class="temperament"><input type="checkbox">Adaptable</div><div class="temperament"><input type="checkbox">Trusting</div><div class="temperament"><input type="checkbox">Lovable</div><div class="temperament"><input type="checkbox">Territorial</div><div class="temperament"><input type="checkbox">Keen</div><div class="temperament"><input type="checkbox">Familial</div><div class="temperament"><input type="checkbox">Rational</div><div class="temperament"><input type="checkbox">Bright</div><div class="temperament"><input type="checkbox">Quick</div><div class="temperament"><input type="checkbox">Powerful</div><div class="temperament"><input type="checkbox">Gay</div><div class="temperament"><input type="checkbox">Stable</div><div class="temperament"><input type="checkbox">Quiet</div><div class="temperament"><input type="checkbox">Inquisitive</div><div class="temperament"><input type="checkbox">Strong</div><div class="temperament"><input type="checkbox">Sociable</div><div class="temperament"><input type="checkbox">Patient</div><div class="temperament"><input type="checkbox">Suspicious</div><div class="temperament"><input type="checkbox">Great-hearted</div><div class="temperament"><input type="checkbox">Merry</div><div class="temperament"><input type="checkbox">Vocal</div><div class="temperament"><input type="checkbox">Tolerant</div><div class="temperament"><input type="checkbox">Mischievous</div><div class="temperament"><input type="checkbox">People-Oriented</div><div class="temperament"><input type="checkbox">Bossy</div><div class="temperament"><input type="checkbox">Cunning</div><div class="temperament"><input type="checkbox">Athletic</div><div class="temperament"><input type="checkbox">Boisterous</div><div class="temperament"><input type="checkbox">Cooperative</div><div class="temperament"><input type="checkbox">Trustworthy</div><div class="temperament"><input type="checkbox">Self-important</div><div class="temperament"><input type="checkbox">Respectful</div><div class="temperament"><input type="checkbox">Thoughtful</div><div class="temperament"><input type="checkbox">Generous</div><div class="temperament"><input type="checkbox">Cat-like</div><div class="temperament"><input type="checkbox">Sturdy</div><div class="temperament"><input type="checkbox">Benevolent</div><div class="temperament"><input type="checkbox">Clever</div><div class="temperament"><input type="checkbox">Bubbly</div><div class="temperament"><input type="checkbox">Opinionated</div><div class="temperament"><input type="checkbox">Aggressive</div><div class="temperament"><input type="checkbox">Extroverted</div><div class="temperament"><input type="checkbox">Charming</div><div class="temperament"><input type="checkbox">Unflappable</div><div class="temperament"><input type="checkbox">Spunky</div><div class="temperament"><input type="checkbox">Diligent</div><div class="temperament"><input type="checkbox">Willful</div><div class="temperament"><input type="checkbox">Fast</div><div class="temperament"><input type="checkbox">Vigilant</div></div><h4>Origen</h4><div class="origin"><button>original</button><button>created</button></div></div></div><div class="home-body"><div class="dogs"><div>Not any dog matches filters selected</div></div><div><div class="footer"><button class="pagination">Anteriores</button><button class="pagination">Siguientes</button></div></div></div><div class="column-right"><div><h3>Ordenar por...</h3><h4>Nombre</h4><select class="options" id="origins"><option class="option" value="asc">ascendente</option><option class="option" value="desc">descendente</option></select><h4>Peso</h4><select class="options" id="weight"><option class="option" value="asc">ascendente</option><option class="option" value="desc">descendente</option></select></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js.descarga"></script><script src="./React App_files/vendors_main.chunk.js.descarga"></script><script src="./React App_files/main.chunk.js.descarga"></script>
+
+</body><app-content ng-version="14.2.0"></app-content></html>

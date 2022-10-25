@@ -1,0 +1,47 @@
+.dog_card {
+    width: 210px;
+    height:330px;
+    border-radius:10px;
+    margin: 5px 10px 10px 10px;
+    background-color: rgb(21, 51, 88);
+    box-shadow:0 10px 8px rgba(0,0,0,0.2);
+}
+
+.dog_card:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.dog_name {
+    text-decoration: none;
+    color: rgb(179, 225, 144); 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:15px;
+    padding:15px;
+    font-size:small;
+}
+
+.dog_info {
+    color: rgb(115, 140, 169);
+    font-size:smaller;
+    text-align: left;
+    font-weight: normal;
+    margin:10px;
+    /* align-content: flex-start; */
+    /* font-size: medium; */
+    /* background-color:aqua; */
+}
+
+.dog_tag {
+    font-weight: bold;
+}
+
+/* .pokemon_captured {
+    background-color: blue;
+} */
+
+/* .pokemon_savage{
+    background-color: beige;
+} */

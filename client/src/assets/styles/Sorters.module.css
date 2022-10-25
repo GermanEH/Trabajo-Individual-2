@@ -1,0 +1,21 @@
+.sorters {
+    width: 100%;
+    margin-top:300px;
+}
+
+.sorters_title, .sorters_subtitle {
+    width: 100%;
+    color:rgb(22, 50, 0)
+}
+
+.options, .origin {
+    background-color: rgb(21, 51, 88);
+    height:30px;
+    border-radius:5px;
+    border:none;
+    color:rgb(183, 227, 149);
+}
+
+.origin {
+    margin:5px;
+}

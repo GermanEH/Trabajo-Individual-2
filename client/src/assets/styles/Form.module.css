@@ -1,0 +1,103 @@
+.newDog {
+    display:flex;
+    flex-direction: row;
+}
+
+.right_column, .form, .left_column {
+    width: 33%
+}
+
+.right_column {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back_button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 140px;
+    border-radius:200px;
+    border:none;
+    font-size:120px;
+    font-weight:bold;
+    color:rgb(21, 51, 88);
+    text-decoration:none;
+    padding-bottom:10px;
+    padding-left:10px;
+}
+
+.back_button:hover {
+    background-color:rgb(21, 51, 88, 0.5);
+    color:white
+}
+
+.form {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.table {
+    background-color:rgb(21, 51, 88);
+    border-radius:5px;
+    margin-bottom:25px;
+    width:100%;
+}
+.dogItem {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:rgb(21, 51, 88);
+    padding: 10px;
+    height: 20px;
+    color: white;
+    margin: 10px;
+}
+
+.label {
+    font-size: normal;
+    width:30%
+}
+
+.temperaments {
+    justify-content: center;
+    color:black
+}
+
+.empty {
+    height:15px;
+}
+
+.validator {
+    font-weight:bold;
+    font-size:10px;
+}
+
+.button_disabled {
+    background-color:grey;
+    color:black;
+    border-radius:2px;
+    height:60px;
+    width:180px
+}
+
+.button {
+    background-color:rgb(33, 33, 233);
+    color:white;
+    border-radius:2px;
+    height:60px;
+    width:180px
+}
+
+.error {
+    border: solid 4px red;
+}
+
+.complete {
+    border: solid 4px green
+}

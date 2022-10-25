@@ -1,0 +1,15 @@
+.nav_bar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: large;
+    height: 75px;
+    width: 100%;
+    background-color:rgb(21, 51, 88);
+}
+
+.nav_bar_item {
+    text-decoration:none;
+    color:rgb(179, 225, 144);
+}
