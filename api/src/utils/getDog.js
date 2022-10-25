@@ -8,25 +8,25 @@ async function getDog (id) {
     let apiDog = [];
     let dogDetail = {};
     try {
-        if (/\d/g.test(id) && /\D/g.test(id)) {       //LIMPIAR ESTO
-            localDog.push(await Dog.findByPk(id, {include: {
+        if ((/[a-zA-Z]/g.test(id) && /[0-9._-]/g.test(id))) {
+            localDog.push(await Dog.findOne({where: {ID: id},
+                include: {
                 attributes:['name'],
-                as: ['temperaments'],     //ver si el plural está bien
+                as: ['temperaments'],     
                 model: Temperament}}))
         } else if(!isNaN(id)){
             let apiDogs = []
             await axiosFunction({url: `${api.BREEDS}`, cbSuccess: (apiDogs) => {
                 apiDog = apiDogs.data.filter(d => d.id === parseInt(id))} , arr: apiDogs, id})
-            // let apiDogs = await axios.get(`${api.BREEDS}`)
-            // apiDog = apiDogs.data.filter(d => d.id === parseInt(id))
-        }           //agrego un return en ambos finders?
-        if(localDog){
+        }      
+        if(localDog.length > 0){
             dogDetail = localDog.map(d => {
-                //let temperament = d.temperament.split(', ')     //lo hago para emparejar el tratamiento que DogCard hace con los casos de getAllDogs (que son arreglo de arreglos para poder hacer filtros combinados)
+                let temperament = d.temperaments.map(t => t.temperament)
+                //los temperamentos de dogs locales vienen como arreglos con el includes, no como strings en el caso de API
                 return {
                     image: d.image,
                     name: d.name,
-                    temperament: d.temperament,
+                    temperament: temperament,
                     height: d.height.metric,
                     weight: d.weight.metric,
                     life_span: d.life_span,
@@ -34,7 +34,7 @@ async function getDog (id) {
                 }
             })
         }
-        if(apiDog){
+        if(apiDog.length > 0){
             dogDetail = apiDog.map(d => {
                 if(d.temperament) { d.temperament = d.temperament.split(', ') } else { d.temperament = ['not temperament available '] }     //lo hago para emparejar el tratamiento que DogCard hace con los casos de getAllDogs (que son arreglo de arreglos para poder hacer filtros combinados)
                 return {

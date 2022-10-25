@@ -1,13 +1,13 @@
 const { Dog } = require("../db");
 
-async function postDog (name, height, weight, life_span, temperaments) {
+async function postDog (name, height, weight, life_span, image, temperaments) {
         try {
-            //no puedo modificar constantes (elementos destructurados como const y pasados por argumentos)
         const dog = await Dog.create({
             name,
             height,
             weight,
-            life_span
+            life_span,
+            image
         })
         await dog.setTemperaments(temperaments)
         return dog

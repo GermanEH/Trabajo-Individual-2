@@ -47,7 +47,7 @@ router.get('/dogs/:id', async (req, res) => {
     }
 })
 router.post('/dogs', async (req, res) => {
-    const {name, minHeight, maxHeight, minWeight, maxWeight, minLifeSpan, maxLifeSpan, temperament} = req.body
+    const {name, minHeight, maxHeight, minWeight, maxWeight, minLifeSpan, maxLifeSpan, image, temperament} = req.body
     if(!name || !temperament) {
         throw new Error('Missing dog name or Temperament')
     }
@@ -67,6 +67,7 @@ router.post('/dogs', async (req, res) => {
             height,
             weight,
             life_span,
+            image,
             temperaments
         )
         res.status(201).send(dog)
