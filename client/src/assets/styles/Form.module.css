@@ -1,6 +1,8 @@
 .newDog {
     display:flex;
     flex-direction: row;
+    background:linear-gradient(rgb(164, 182, 204), rgb(77, 107, 143));
+    height:1000px;
 }
 
 .right_column, .form, .left_column {

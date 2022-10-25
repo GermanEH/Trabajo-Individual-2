@@ -143,6 +143,7 @@ export const createDog = (dog) => {
                 maxLifeSpan: dog.maxLifeSpan,
                 temperament: dog.temperaments,
             }
+            console.log(newDog)
             const response = await axios.post('http://localhost:3001/dogs', newDog)
             if(!!response.err) {
                 let error = `Error ${response.status}: ${response.statusText}`

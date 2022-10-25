@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../../assets/styles/DogCard.module.css';
+import logo from '../../assets/images/huella_de_perro.png'
 import { Link } from "react-router-dom";
 
-export default function DogCard ({image, name, temperament, weight, id, addCapture}) {
+export default function DogCard ({image, name, temperament, weight, id, addAdoption}) {
 
-    console.log(id)
-    // let dogData = {image, name, temperament, weight}
-    // let captured = false
-    // function handleCapture(){
-    //     if (captured === false) {captured = true}
-    //     else {captured = false}
-    //     addCapture(pokemonData)
-    // }
+    const [adopted, setAdopted] = useState(false)
+
+    let dogData = {image, name, temperament, weight, id}
+    function handleAdoption(e){
+        if (adopted === false) {setAdopted(true)}
+        else {setAdopted(false)}
+        addAdoption(dogData)
+    }
                         //className={`pokemon-card ${(captured===true) ? 'pokemon_captured' : 'pokemon_savage'}`}
 
 
@@ -24,6 +25,9 @@ export default function DogCard ({image, name, temperament, weight, id, addCaptu
                         {name}
                     </h3>
                 </Link>
+                <div className={style.dog_adoption} onClick={handleAdoption}>
+                    <img src={logo} alt="not found" width='20' height='20'/>
+                </div>
                 <div>
                     <img src={image} alt="not found" height='150' width='100%'/>
                 </div>

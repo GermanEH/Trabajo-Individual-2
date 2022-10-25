@@ -4,9 +4,37 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+    height:800px;
+    background:linear-gradient(rgb(164, 182, 204), rgb(77, 107, 143));
+}
+
+.right_column, .left_column {
+    width: 20%
+} 
+
+.back_button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 140px;
+    border-radius:200px;
+    border:none;
+    font-size:120px;
+    font-weight:bold;
+    color:rgb(21, 51, 88);
+    text-decoration:none;
+    padding-bottom:10px;
+    padding-left:10px;
+}
+
+.back_button:hover {
+    background-color:rgb(21, 51, 88, 0.5);
+    color:white
 }
 
 .dog_container {
+    width: 60%;
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -24,6 +52,7 @@
 }
 
 .dog_info {
+    color:white;
     width:50%;
     flex-direction: row;
     justify-content: center;
@@ -31,9 +60,9 @@
     align-items: center;
 }
 
-.dog-stat {
+.dog_stat {
     padding: 15px;
-    margin-top: 10px;
+    margin: 10px;
     border-bottom: 5px solid aliceblue;
 }
 

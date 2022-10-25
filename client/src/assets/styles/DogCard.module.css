@@ -38,6 +38,15 @@
     font-weight: bold;
 }
 
+.dog_adoption {
+    background-color:none;
+    border:none;
+    position:relative;
+    left:80px;
+    bottom:20px;
+    border-radius:10px;
+}
+
 /* .pokemon_captured {
     background-color: blue;
 } */

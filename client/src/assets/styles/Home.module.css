@@ -1,6 +1,8 @@
 .home {
     display:flex;
     flex-direction: row;
+    background:linear-gradient(rgb(164, 182, 204), rgb(77, 107, 143));
+    background-size:cover;
 }
 
 .column_right, .column_left {
