@@ -8,7 +8,7 @@ import Pagination from "../renders/Pagination.jsx";
 import DogCard from "../renders/DogCard.jsx";
 import Message from "../renders/Message.jsx"
 import { getAllDogs, getTemperaments, selectFilter, setFiltered, setRender, filter, sortByName, sortByWeight, 
-    pagination, cleanSomeDogs, cleanDog, cleanError } from "../../redux/actions";
+    pagination, cleanSomeDogs, cleanDog, cleanError } from "../../redux/actions/index.js";
 
 export default function Home () {
 

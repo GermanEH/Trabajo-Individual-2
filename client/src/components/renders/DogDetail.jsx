@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import style from '../../assets/styles/DogDetail.module.css';
 import Loader from "./Loader.jsx"
-import { getDog, setFiltered, cleanDog } from "../../redux/actions";
+import { getDog, setFiltered, cleanDog } from "../../redux/actions/index.js";
 import { Link } from "react-router-dom";
 
 export default function DogDetail (props) {

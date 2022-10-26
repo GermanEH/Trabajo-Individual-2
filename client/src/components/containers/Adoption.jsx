@@ -7,7 +7,7 @@ import Message from '../renders/Message.jsx'
 import Loader from '../renders/Loader.jsx'
 import Filters from '../renders/Filters.jsx'
 import Sorters from '../renders/Sorters.jsx'
-import { cleanError, setFiltered, selectFilter, sortByName, sortByWeight, getTemperaments } from '../../redux/actions'
+import { cleanError, setFiltered, selectFilter, sortByName, sortByWeight, getTemperaments } from '../../redux/actions/index.js'
 
 function DogAdoption() {
 

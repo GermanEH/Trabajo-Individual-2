@@ -3,7 +3,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import style from '../../assets/styles/DogCard.module.css';
 import logo from '../../assets/images/huella_de_perro.png'
 import { Link } from "react-router-dom";
-import { adoption } from "../../redux/actions"
+import { adoption } from "../../redux/actions/index.js"
 
 export default function DogCard ({image, name, temperament, weight, id}) {
 
@@ -14,10 +14,8 @@ export default function DogCard ({image, name, temperament, weight, id}) {
     function handleAdoption(e){
         dispatch(adoption(dogData, adopted))
     }
-                        //className={`pokemon-card ${(captured===true) ? 'pokemon_captured' : 'pokemon_savage'}`}
+                        //className={`dog-card ${(captured===true) ? 'adopted' : 'not_adopted'}`}
 
-
-                        //está bien el link de dogs/id??? o es otro nombre
     return (
         <div>
             <div className={style.dog_card}>       

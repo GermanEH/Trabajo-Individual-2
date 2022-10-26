@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import style from '../../assets/styles/Pagination.module.css'
+import logo from '../../assets/images/hueso_de_perro.png'
 
 export default function Pagination({currentPage, filtered, pagination, dispatch}) {
 
@@ -23,7 +24,10 @@ export default function Pagination({currentPage, filtered, pagination, dispatch}
 
     return (
         <div className={style.footer}>
-                <div className={style.actualPage}>N° {actualPage}</div>
+                <div className={style.page_number}>
+                    {/* <div><img clasName={style.page_number_image} src={logo} alt="not found" height='40' width='60'/></div> */}
+                    <div className={style.actual_page}>N° {actualPage}</div>
+                </div>
                 <div className={style.bottom}>
                     <button className={`${style.pagination} ${(currentPage - 1 > 0) ? style.show_arrow : style.hide_arrow}`} onClick={() => dispatch(pagination(currentPage, filtered, 'anteriores'))}> {'<'} </button>
                         <div className={style.pages}>

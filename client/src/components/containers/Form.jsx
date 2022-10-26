@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import style from '../../assets/styles/Form.module.css'
 // import logo from '../../assets/Ash_Ketchum_BW.webp'       //CAMBIAR LOGO
 import Message from '../renders/Message.jsx'
-import { getAllDogs, getTemperaments, createDog, cleanError, cleanMessage } from '../../redux/actions'
+import { getAllDogs, getTemperaments, createDog, cleanError, cleanMessage } from '../../redux/actions/index.js'
 import validations from "../../helpers/validations.js"; 
 import { Link } from "react-router-dom";
 

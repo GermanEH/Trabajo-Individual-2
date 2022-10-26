@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getDog } from '../../redux/actions';
+import { getDog } from '../../redux/actions/index.js';
 import style from '../../assets/styles/SearchBar.module.css';
 import logo from '../../assets/images/lupa.png'
 
