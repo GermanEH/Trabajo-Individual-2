@@ -32,8 +32,8 @@ export default function Form () {
     const temperament = useSelector(state => state.temperament)
     const dispatch = useDispatch()
 
-    useEffect(() => dispatch(getAllDogs()), [dispatch])
-    useEffect(() => dispatch(getTemperaments()), [dispatch]) 
+    useEffect(() => {dispatch(getAllDogs()); return () => {}}, [dispatch])
+    useEffect(() => {dispatch(getTemperaments()); return () => {}}, [dispatch]) 
 
     useEffect(() => {
         let dogNames = []

@@ -6,7 +6,7 @@ export default function Pagination({currentPage, filtered, pagination, dispatch}
 
     const [pages, setPages] = useState([])
     const [actualPage, setActualPage] = useState(1)
-
+    console.log(filtered)
     useEffect(() => {
             let totalPages = (Math.ceil(filtered.length / 8))
             let arrPages = []

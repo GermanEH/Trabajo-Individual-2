@@ -19,7 +19,7 @@ function DogAdoption() {
   const selectedFilters = useSelector(state => state.selectedFilters)
   const dispatch = useDispatch()
 
-  useEffect(() => dispatch(getTemperaments()), [dispatch])
+  useEffect(() => {dispatch(getTemperaments()); return () => {}}, [dispatch])
 
   const handleClose = () => {
     if(error)dispatch(cleanError())

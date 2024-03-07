@@ -25,9 +25,9 @@ export default function Home () {
     const render = useSelector(state => state.render)
     const dispatch = useDispatch()
 
-    useEffect(() => {dispatch(getAllDogs()).then((res) => {if(res)dispatch(setFiltered(res))})}, [dispatch])
-    useEffect(() => dispatch(getTemperaments()), [dispatch]) 
-    useEffect(() => (someDogs.length) ? dispatch(filter(someDogs)) : dispatch(filter()), [dispatch, selectedFilters, someDogs])
+    useEffect(() => {dispatch(getAllDogs()).then((res) => {if(res)dispatch(setFiltered(res))}); return ()=> {}}, [dispatch])
+    useEffect(() => {dispatch(getTemperaments()); return () => {}}, [dispatch]) 
+    useEffect(() => {(someDogs.length) ? dispatch(filter(someDogs)) : dispatch(filter()); return () => {}}, [dispatch, selectedFilters, someDogs])
 
     const slicedDogs = () => {
         //1. que no se encuentre ningún dog x name o id
