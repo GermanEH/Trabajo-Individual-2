@@ -1,39 +1,20 @@
-import React from 'react';
 import style from '../../assets/styles/Filters.module.css'
+import { Temperaments } from './Temperaments.jsx'
+import { Origin } from './Origin.jsx'
 
-export default function Filters ({temperament, selectFilter, selectedFilters, dispatch}) {
-
-    let filters = []
-    for (const filter of selectedFilters) {
-        filters.push(Object.values(filter))
-    }
+export default function Filters ({filters, setFilters, temperament}) {
+    
     return (
+    <div className={style.column_left}>
+        {temperament && 
         <div className={style.filters}>
             <h3 className={style.filters_title}>Filtrar por...</h3>
-                    <h4 className={style.filters_subtitle}>Temperamento</h4>
-                    <select className={style.options} id="temperaments" onChange={(e) => dispatch(selectFilter(selectedFilters, {'temperament': e.target.value}))}>
-                        {(temperament?.map(
-                            (t, i) => 
-                            <option className="option" 
-                            value={t.name} 
-                            key={i}>{t.name}</option>
-                        ))}
-                    </select>
-                    <div>{filters?.map(
-                        (t, i) => 
-                        <div key={i}>
-                            {t}
-                            <button value={t} onClick={(t) => dispatch(selectFilter(selectedFilters, {'temperament': t.target.value}))}>x</button>
-                        </div>
-                    )}</div>
-                    <h4 className={style.filters_subtitle}>Origen</h4>
-                    <div className={style.origins}>
-                        <button className={style.origin} onClick={() => dispatch(selectFilter (selectedFilters, {'origin': 'original'}))} key={1}>original</button>
-                        <button className={style.origin} onClick={() => dispatch(selectFilter (selectedFilters, {'origin': 'created'}))} key={2}>created</button>
-                    </div>
+                    <Temperaments temperament={temperament} filters={filters} setFilters={setFilters}/>
+                    <Origin filters={filters} setFilters={setFilters}/>
+        </div>}
         </div>
-        
     )
+
 }
 
 //Se puede mejorar con React-select o React multiselect
