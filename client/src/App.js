@@ -1,49 +1,31 @@
 import React from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import style from './App.module.css';
-import Logo from './assets/perro-con-un-hueso-10959.gif';
-import Home from './components/containers/Home.jsx';
-import NavBar from './components/containers/NavBar.jsx';
-import Form from './components/containers/Form.jsx';
-import DogDetail from './components/renders/DogDetail.jsx';
-import Adoption from './components/containers/Adoption.jsx';
+import Logo from './assets/images/Barkwise_alliance_logo.jpg';
+import Home from './pages/Home/Home.tsx'
+import Breeds from './pages/Breeds.jsx'
+import Form from './pages/Form.jsx';
+import MatchCan from './pages/MatchCan.jsx';
+import Events from './pages/Events.jsx';
+import Profile from './pages/Profile.jsx';
+import DogDetail from './pages/DogDetail.jsx';
 import NotFound from './components/containers/NotFound.jsx';
 
 function App() {
   return (
     <div className={style.App}>
-      <Switch>
-        <Route exact path='/home'>
-          <Link to='/'>
-            <header className={style.App_header}></header>
-          </Link>
-          <NavBar />
-          <Home />
+      <Routes>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/breeds' element={<Breeds/>}>
+          <Route path='/breeds/:id' element={<DogDetail/>}/>
+          <Route path='/breeds/create' element={<Form/>}/>
         </Route>
-        <Route exact path='/dog/create'>
-          <Form />
-        </Route>
-        <Route exact path='/dogs/:id' component={DogDetail}></Route>
-        <Route exact path='/adoption'>
-          <Link to='/'>
-            <header className={style.App_header}></header>
-          </Link>
-          <NavBar />
-          <Adoption />
-        </Route>
-        <Route exact path='/'>
-          <div className={style.landing_page}>
-            <Link to='/home' style={{ textDecoration: 'none', color: 'black' }}>
-              <div className={style.landing_title}>
-                <h1>¡Bienvenidos a la biblioteca canina!</h1>
-                <div className={style.landing_body}></div>
-                <img src={Logo} alt='loading...' widht='150' height='150' />
-              </div>
-            </Link>
-          </div>
-        </Route>
-        <Route path='*' component={NotFound} />
-      </Switch>
+        <Route path='/matcher' element={<MatchCan/>}/>
+        <Route path='/events' element={<Events/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/' element={<Navigate to='/home'/>}/>
+        <Route path='*' element={<NotFound/>} />
+      </Routes>
     </div>
   );
 }
