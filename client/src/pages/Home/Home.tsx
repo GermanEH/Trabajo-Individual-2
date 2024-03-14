@@ -1,13 +1,12 @@
 import React from 'react'
-import Logo from '../../assets/images/Barkwise_alliance_logo.jpg'
 import NavBar from '../../components/containers/NavBar'
 import style from './Home.module.css'
 import {Link} from 'react-router-dom'
 import HeroImage from '../../assets/images/Hero_image_2.jpeg'
-const Home = () => {
+
+const Home:React.FC = () => {
   return (
     <>
-    <NavBar/>
     <header className={style.header}>
       <section className={style.header_section}>
         <h1 style={{fontSize:'2.7rem', fontWeight:'bold'}}>Pawsitively Changing Lives, One Woof at a Time</h1>

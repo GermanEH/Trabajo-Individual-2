@@ -5,7 +5,6 @@ import Home from '../../components/containers/Home'
 const Breeds = () => {
   return (
     <>
-    <NavBar/>
     <Home/>
     </>
   )
