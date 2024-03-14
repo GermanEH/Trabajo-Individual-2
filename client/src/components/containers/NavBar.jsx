@@ -1,15 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import style from '../../assets/styles/NavBar.module.css'
+import {useLocation} from 'react-router';
+import style from '../../pages/Home/Home.module.css'
+import {Link} from 'react-router-dom'
+import Logo from '../../assets/images/Barkwise_alliance_logo.jpg'
 import SearchBar from './SearchBar.jsx';
 
 export default function NavBar({onSearch}) {            //y esto?
+    const location = useLocation()
+
     return (
-        <nav className={style.nav_bar}>
-            <Link to ='/home' className={style.nav_bar_item}>Home</Link>
-            <Link to ='/dog/create' className={style.nav_bar_item}>Create New Breed!</Link>
-            <Link to ='/adoption' className={style.nav_bar_item}>Adoption</Link>
-            <SearchBar />
+        <nav>
+      <ul className={style.navbar}>
+        <li className={style.navbar_logo}>
+          <img src={Logo} className={style.navbar_logo_img}/>
+          <div className={style.navbar_logo_text}>
+            <p style={{margin:'0'}}>Barkwise</p>
+            <p style={{margin:'0'}}>Alliance</p>
+          </div>
+        </li>
+        <li style={{padding:'2rem'}}><Link to='/breeds' className={style.navbar_link}>DoggyPedia</Link></li>
+        <li style={{padding:'2rem'}}><Link to='/matcher' className={style.navbar_link}>MatchCan</Link></li>
+        <li style={{padding:'2rem'}}><Link to='/events' className={style.navbar_link}>Events</Link></li>
+        {location.pathname !== '/home' ? 
+            <li>
+                <SearchBar />
+            </li> : 
+            <>
+            <li style={{padding:'2rem', margin: '0rem 0rem 0rem 9rem'}}>Iniciar sesión</li>
+            <li>
+                <button style={{width:'10rem', height:'3rem', backgroundColor:'white', color:'rgb(45, 77, 115)', borderColor:'rgb(45, 77, 115)', borderRadius:'0.2rem', fontWeight:'bold'}}>BECOME DONOR</button>
+            </li>
+            <li>
+                <button style={{width:'10rem', height:'3rem', margin: '0rem 0rem 0rem 2rem', backgroundColor:'rgb(45, 77, 115)', color:'white', border:'none', borderRadius:'0.2rem', fontWeight:'bold'}}>BECOME MEMBER</button>
+            </li>
+            </>       
+        }
+
+
+      </ul>
         </nav>
     )
 }
