@@ -2,12 +2,15 @@
     display:flex;
     align-items:center;
     justify-content:left;
-    list-style:none
+    list-style:none;
+    padding:0rem;
+    font-weight: bold;
 }
 
 .navbar_logo {
     display:flex; 
-    align-items:center
+    align-items:center;
+    margin-right:2rem
 }
 
 .navbar_logo_img {
@@ -18,13 +21,19 @@
 .navbar_logo_text {
     display:flex;
     flex-direction:column;
-    align-items:center
+    align-items:center;
+    font-size:larger
+}
+
+.navbar_link {
+    text-decoration:none;
+    color:inherit
 }
 
 .header {
     display:grid;
     grid-template-columns:1fr 2fr;
-    margin:0rem 0rem 10rem 0rem
+    margin:0rem 0rem 6rem 0rem
 }
 
 .header_section {
@@ -41,7 +50,8 @@
     background-color:rgb(45, 77, 115);
     color:white;
     border:none;
-    border-radius:0.2rem
+    border-radius:0.2rem;
+    font-weight: bold;
 }
 
 .main_section {
@@ -54,4 +64,8 @@
     align-items:flex-start;
     flex-direction:column;
     margin:2rem
+}
+
+.main_section_link {
+    color:inherit
 }
