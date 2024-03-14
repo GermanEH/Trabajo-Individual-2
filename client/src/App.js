@@ -3,12 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import style from './App.module.css';
 import Logo from './assets/images/Barkwise_alliance_logo.jpg';
 import Home from './pages/Home/Home.tsx'
-import Breeds from './pages/Breeds.jsx'
-import Form from './pages/Form.jsx';
-import MatchCan from './pages/MatchCan.jsx';
-import Events from './pages/Events.jsx';
-import Profile from './pages/Profile.jsx';
-import DogDetail from './pages/DogDetail.jsx';
+import Breeds from './pages/Breeds/Breeds.tsx'
+import Form from './pages/Form/Form.tsx';
+import MatchCan from './pages/MatchCan/MatchCan.tsx';
+import Events from './pages/Events/Events.tsx';
+import Profile from './pages/Profile/Profile.tsx';
+import DogDetail from './pages/DogDetail/DogDetail.tsx';
 import NotFound from './components/containers/NotFound.jsx';
 
 function App() {
