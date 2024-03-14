@@ -10,13 +10,13 @@ export default function Home () {
     //PARA GITHUB: incorporar React Select, React Forms, etc. (librerías para mejor organización y presentación visual)
  
     const {filtered, temperament, dispatch} = useFetchInitialData()
-    const {filters, setFilters, sorters, setSorters} = useSortingAndFiltering()
+    const {filters, setFilters, setSorters} = useSortingAndFiltering()
 
     return (
         <div className={style.home}>
             <Filters filters={filters} setFilters={setFilters} temperament={temperament} />
             <DogsList setFilters={setFilters} filtered={filtered} dispatch={dispatch} />
-            <Sorters sorters={sorters} setSorters={setSorters} filtered={filtered} dispatch={dispatch}/>
+            <Sorters setSorters={setSorters}/>
         </div>
     )
 }
