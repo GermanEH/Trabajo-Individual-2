@@ -7,7 +7,7 @@ import Message from '../renders/Message.jsx'
 import Loader from '../renders/Loader.jsx'
 import Filters from '../renders/Filters.jsx'
 import Sorters from '../renders/Sorters.jsx'
-import { cleanError, setFiltered, selectFilter, sortByName, sortByWeight, getTemperaments } from '../../redux/actions/index.js'
+import { cleanError, setFiltered, selectFilter, getTemperaments } from '../../redux/actions/index.js'
 
 function DogAdoption() {
 
@@ -47,9 +47,9 @@ function DogAdoption() {
               </div>
           </div>
                     
-          <div className={style.column_right}>
+          {/* <div className={style.column_right}>
               <Sorters sortByName={sortByName} sortByWeight={sortByWeight} filtered={adopted} dispatch={dispatch} />
-          </div>
+          </div> */}
     </div>
   )
 }

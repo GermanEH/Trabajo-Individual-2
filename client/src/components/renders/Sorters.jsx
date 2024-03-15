@@ -1,7 +1,7 @@
 import React from 'react';
 import style from '../../assets/styles/Sorters.module.css' 
 
-export default function Sorters ({sorters, setSorters, dispatch, filtered}) {
+export default function Sorters ({ setSorters }) {
 
     return (
         <div className={style.column_right}>

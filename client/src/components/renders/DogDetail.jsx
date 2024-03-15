@@ -2,23 +2,21 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import style from '../../assets/styles/DogDetail.module.css';
 import Loader from "./Loader.jsx"
-import { getDog, setFiltered, cleanDog } from "../../redux/actions/index.js";
+import { getDogById, setFiltered, cleanDog } from "../../redux/actions/index.js";
 import { Link } from "react-router-dom";
 
 export default function DogDetail (props) {
 
-    console.log(props)
     const dogId = props.match.params.id
-    const dog = useSelector(state => state.dog[0])
+    const dog = useSelector(state => state.dog)
     const dispatch = useDispatch()
     
     useEffect(() => {
-        dispatch(getDog(dogId)); 
+        dispatch(getDogById(dogId)); 
         return function() {dispatch(cleanDog())}}, 
         [dispatch, dogId])
     useEffect(() => dispatch(setFiltered(dog)))
 
-    console.log(dog)
     return (
         <div className={style.dog_detail}>
             <div className={style.right_column}>
@@ -41,7 +39,7 @@ export default function DogDetail (props) {
                     <div className={style.dog_info}>
                         <div className={style.dog_data}>
                             <div className={style.dog_stat}>
-                                Temperament: {dog.temperament.join(', ')}
+                                {/* Temperament: {dog.temperament.join(', ')} */}
                             </div>
                             <div className={style.dog_stat}>
                                 Height: {dog.height}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getDog } from '../../redux/actions/index.js';
+import { getDogByName } from '../../redux/actions/index.js';
 import style from '../../assets/styles/SearchBar.module.css';
 import logo from '../../assets/images/lupa.png'
 
@@ -11,7 +11,7 @@ export default function SearchBar () {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(getDog(newDog, dogs))
+        dispatch(getDogByName(newDog, dogs))
         setNewDog("")
     }
     return (

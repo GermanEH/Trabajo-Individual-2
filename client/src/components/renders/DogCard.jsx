@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import style from '../../assets/styles/DogCard.module.css';
 import logo from '../../assets/images/huella_de_perro.png'
@@ -11,6 +11,7 @@ export default function DogCard ({image, name, temperament, weight, id}) {
     const dispatch = useDispatch()
 
     let dogData = {image, name, temperament, weight, id}
+    
     function handleAdoption(e){
         dispatch(adoption(dogData, adopted))
     }

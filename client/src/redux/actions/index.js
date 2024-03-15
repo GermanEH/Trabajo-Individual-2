@@ -9,16 +9,16 @@ import {
 
   //Types
   GET_TEMPERAMENTS,
+  GET_GROUPS,
+  GET_ORIGINS,
   DELETE_SELECTED_FILTER,
   ADD_SELECTED_FILTER,
 
   //Filters
   FILTER_DOGS,
-  FILTER_SOME_DOGS,
 
   //Sorters
-  SORT_DOGS_BY_NAME,
-  SORT_DOGS_BY_WEIGHT,
+  SORT_DOGS,
 
   //Pokeball
   ADD_ADOPTED,
@@ -28,7 +28,6 @@ import {
   SET_FILTERED,
   RENDER,
   PAGINATION,
-  CLEAN_SOME_DOGS,
   CLEAN_DOG,
   CLEAN_MESSAGE,
 
@@ -77,13 +76,29 @@ export const getTemperaments = () => {
         let error = `Error ${response.status}: ${response.statusText}`;
         return dispatch({ type: ERROR, payload: error });
       } else if (!!response.data) {
-        console.log('entramos al exito');
-        const data = response.data.sort(function (a, b) {
+        console.log('entramos al exito', response.data);
+        const {temperaments, groups, origins} = response.data
+        console.log
+        const temperamentsSorted = temperaments.sort(function (a, b) {
           if (a.name < b.name) return -1;
           if (a.name > b.name) return 1;
           return 0;
         });
-        dispatch({ type: GET_TEMPERAMENTS, payload: data });
+        dispatch({ type: GET_TEMPERAMENTS, payload: temperamentsSorted });
+
+        const groupsSorted = groups.sort(function (a, b) {
+          if (a.name < b.name) return -1;
+          if (a.name > b.name) return 1;
+          return 0;
+        });
+        dispatch({ type: GET_GROUPS, payload: groupsSorted });
+
+        const originsSorted = origins.sort(function (a, b) {
+          if (a.name < b.name) return -1;
+          if (a.name > b.name) return 1;
+          return 0;
+        });
+        dispatch({ type: GET_ORIGINS, payload: originsSorted });
         return data;
       }
     } catch (error) {
@@ -92,6 +107,83 @@ export const getTemperaments = () => {
     }
   };
 };
+
+export const getDogById = (dogId) => {
+
+  return async function (dispatch) {
+
+    try {
+
+        const response = await api.get(`http://localhost:3001/dogs/${dogId}`);
+        if (!!response.err) {
+          let error = `Error ${response.status}: ${response.statusText}`;
+          dispatch({ type: ERROR, payload: error });
+        } else if (!!response.data) {
+          let data = response.data;
+          if (data.length === 0) {
+            return dispatch({
+              type: ERROR,
+              payload: `Can't find dog with id: ${dog}`,
+            });
+          }
+          dispatch({ type: GET_DOG, payload: data });
+        }
+
+    } catch (error) {
+
+      return {error: error.message}
+
+    }
+  }
+}
+
+export const getDogByName = (dog, dogs) => {
+
+  return async function(dispatch) {
+
+    try {
+
+    if (isNaN(dog)) {
+      const response = await api.get(
+        `http://localhost:3001/dogs/?name=${dog}`
+      );
+      
+      console.log('entramos a dog name', response);
+      
+      if (!!response.err) {
+
+        let error = `Error ${response.status}: ${response.statusText}`;
+        dispatch({ type: ERROR, payload: error });
+
+      } else if (!!response.data) {
+
+        let data = response.data;
+
+        if (data.length === dogs.length)
+
+          dispatch({ type: ERROR, payload: 'Error 404: Not Found' }); //la url mal escrita del localhost me devuelve el total de dogs
+
+        if (data.length === 0) {
+
+          return dispatch({
+            type: ERROR,
+            payload: `Can't find dog with name: ${dog}`,
+          });
+        }
+
+        dispatch({ type: GET_SOME_DOGS, payload: data });
+      }
+    }
+    
+  } catch (error) {
+
+    dispatch({ type: ERROR, payload: error.message });
+
+  } finally {
+
+    console.log('done');
+  }}
+}
 
 export const getDog = (dog, dogs) => {
   return async function (dispatch) {
@@ -199,12 +291,11 @@ export const selectFilter = (selectedFilters, filter) => {
   };
 };
 
-export const filter = (someDogs) => {
+export const filter = (filters) => {
   return function (dispatch) {
     try {
-      someDogs
-        ? dispatch({ type: FILTER_SOME_DOGS })
-        : dispatch({ type: FILTER_DOGS });
+      console.log('filter dogs', filters)
+      dispatch({ type: FILTER_DOGS, payload: filters })
     } catch (error) {
       dispatch({ type: ERROR, payload: error.message });
     } finally {
@@ -213,72 +304,65 @@ export const filter = (someDogs) => {
   };
 };
 
-export const sortByName = (order, filtered) => {
+export const sort = (sorters, filtered) => {
   return function (dispatch) {
     try {
-      if (order === 'asc') {
-        filtered.sort(function (a, b) {
-          if (a.name < b.name) return -1;
-          if (a.name > b.name) return 1;
-          return 0;
-        });
-      } else {
-        filtered.sort(function (a, b) {
-          if (b.name < a.name) return -1;
-          if (b.name > a.name) return 1;
-          return 0;
-        });
+      for(let key in sorters){
+        if (key === 'name'){
+          if (sorters[key] === 'asc') {
+            filtered.sort(function (a, b) {
+              if (a.name < b.name) return -1;
+              if (a.name > b.name) return 1;
+              return 0;
+            });
+          } else {
+            filtered.sort(function (a, b) {
+              if (b.name < a.name) return -1;
+              if (b.name > a.name) return 1;
+              return 0;
+            });
+          }
+        } else {
+          if (sorters[key] === 'asc') {
+            filtered.sort(function (a, b) {
+              a.weight.length < 3
+                ? (a.firstItem = '00')
+                : (a.firstItem = a.weight.split(' ').shift());
+              b.weight.length < 3
+                ? (b.firstItem = '00')
+                : (b.firstItem = b.weight.split(' ').shift());
+              a.lastItem = a.weight.split(' ').pop();
+              if (a.lastItem < 10) a.lastItem = '0' + a.lastItem;
+              b.lastItem = b.weight.split(' ').pop();
+              if (b.lastItem < 10) b.lastItem = '0' + b.lastItem;
+              if (a.lastItem < b.lastItem) return -1;
+              if (a.lastItem > b.lastItem) return 1;
+              if (a.firstItem < b.firstItem) return -1;
+              if (a.firstItem > b.firstItem) return 1;
+              return 0;
+            });
+          } else {
+            filtered.sort(function (a, b) {
+              a.weight.length < 3
+                ? (a.firstItem = '00')
+                : (a.firstItem = a.weight.split(' ').shift());
+              b.weight.length < 3
+                ? (b.firstItem = '00')
+                : (b.firstItem = b.weight.split(' ').shift());
+              a.lastItem = a.weight.split(' ').pop();
+              if (a.lastItem < 10) a.lastItem = '0' + a.lastItem;
+              b.lastItem = b.weight.split(' ').pop();
+              if (b.lastItem < 10) b.lastItem = '0' + b.lastItem;
+              if (b.lastItem < a.lastItem) return -1;
+              if (b.lastItem > a.lastItem) return 1;
+              if (b.firstItem < a.firstItem) return -1;
+              if (b.firstItem > a.firstItem) return 1;
+              return 0;
+            });
+          }
+        }
       }
-      dispatch({ type: SORT_DOGS_BY_NAME, payload: filtered });
-    } catch (error) {
-      dispatch({ type: ERROR, payload: error.message });
-    } finally {
-      console.log('done');
-    }
-  };
-};
-
-export const sortByWeight = (order, filtered) => {
-  return function (dispatch) {
-    try {
-      if (order === 'asc') {
-        filtered.sort(function (a, b) {
-          a.weight.length < 3
-            ? (a.firstItem = '00')
-            : (a.firstItem = a.weight.split(' ').shift());
-          b.weight.length < 3
-            ? (b.firstItem = '00')
-            : (b.firstItem = b.weight.split(' ').shift());
-          a.lastItem = a.weight.split(' ').pop();
-          if (a.lastItem < 10) a.lastItem = '0' + a.lastItem;
-          b.lastItem = b.weight.split(' ').pop();
-          if (b.lastItem < 10) b.lastItem = '0' + b.lastItem;
-          if (a.lastItem < b.lastItem) return -1;
-          if (a.lastItem > b.lastItem) return 1;
-          if (a.firstItem < b.firstItem) return -1;
-          if (a.firstItem > b.firstItem) return 1;
-          return 0;
-        });
-      } else {
-        filtered.sort(function (a, b) {
-          a.weight.length < 3
-            ? (a.firstItem = '00')
-            : (a.firstItem = a.weight.split(' ').shift());
-          b.weight.length < 3
-            ? (b.firstItem = '00')
-            : (b.firstItem = b.weight.split(' ').shift());
-          a.lastItem = a.weight.split(' ').pop();
-          if (a.lastItem < 10) a.lastItem = '0' + a.lastItem;
-          b.lastItem = b.weight.split(' ').pop();
-          if (b.lastItem < 10) b.lastItem = '0' + b.lastItem;
-          if (b.lastItem < a.lastItem) return -1;
-          if (b.lastItem > a.lastItem) return 1;
-          if (b.firstItem < a.firstItem) return -1;
-          if (b.firstItem > a.firstItem) return 1;
-          return 0;
-        });
-      }
-      dispatch({ type: SORT_DOGS_BY_WEIGHT, payload: filtered });
+      dispatch({ type: SORT_DOGS, payload: filtered });
     } catch (error) {
       dispatch({ type: ERROR, payload: error.message });
     } finally {
@@ -313,12 +397,6 @@ export const pagination = (currentPage, filtered, pages) => {
     } finally {
       console.log('done');
     }
-  };
-};
-
-export const cleanSomeDogs = () => {
-  return {
-    type: CLEAN_SOME_DOGS,
   };
 };
 

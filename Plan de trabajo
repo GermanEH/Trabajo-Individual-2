@@ -1,0 +1,29 @@
+Actualizar react-router-dom de 5 a 6, actualizando dependencias, ycambiando "Switch" por "Routes" y "component" por "element".
+
+Cambiar de CRA a Vite
+
+Incorporar TS con Vite
+
+Welcome to Barkwise Alliance, the place to share our love and passion for our best four-legged friends.
+
+1. Comprehensive Breed Profiles: Each breed could have its own detailed profile page containing information such as history, temperament, physical characteristics, health concerns, and care requirements.
+
+2. Interactive Breed Selector: Implement a tool that helps users find the right dog breed for their lifestyle and preferences by answering a series of questions about their living situation, activity level, and preferences.
+
+3. User-Generated Content: Allow registered users to contribute articles, photos, and videos about different dog breeds, training tips, grooming advice, and personal stories. This could enrich the content and engage the community.
+
+4. Mobile Responsiveness: Ensure the website is optimized for mobile devices, allowing users to access information on the go.
+
+5. Events Calendar: Feature an events calendar listing dog shows, competitions, adoption events, and other relevant activities happening in different regions.
+
+6. Personalized User Profiles: Enable users to create profiles where they can save their favorite breeds, articles, and discussions, as well as track their contributions to the platform.
+
+---
+
+7. Discussion Forums: Create discussion forums or chat rooms where dog enthusiasts can connect, ask questions, share experiences, and seek advice from fellow members.
+
+8. Multimedia Content: Incorporate photos, videos, and audio clips to make the platform more engaging and informative. Users could upload media showcasing their own dogs or demonstrating training techniques.
+
+9. Integration with Social Media: Allow users to easily share content from the platform on their social media accounts and encourage social interaction by integrating features like liking, commenting, and sharing.
+
+10. Localization: Provide content in multiple languages and incorporate information about dog breeds from different countries and regions to cater to a global audience.

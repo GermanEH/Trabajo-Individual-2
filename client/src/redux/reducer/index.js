@@ -1,31 +1,26 @@
 import {
   GET_ALL_DOGS,
-  GET_SOME_DOGS,
   GET_DOG,
   SUCCESS_POST,
 
   //Types
   GET_TEMPERAMENTS,
-  ADD_SELECTED_FILTER,
-  DELETE_SELECTED_FILTER,
+  GET_GROUPS,
+  GET_ORIGINS,
 
   //Filters
   FILTER_DOGS,
-  FILTER_SOME_DOGS,
 
   //Sorters
-  SORT_DOGS_BY_NAME,
-  SORT_DOGS_BY_WEIGHT,
+  SORT_DOGS,
 
   //Pokeball
   ADD_ADOPTED,
   REMOVE_ADOPTED,
 
   //Renderization
-  SET_FILTERED,
   PAGINATION,
   RENDER,
-  CLEAN_SOME_DOGS,
   CLEAN_DOG,
   CLEAN_MESSAGE,
 
@@ -37,6 +32,8 @@ import {
 const initialState = {
   dogs: [],
   temperament: [],
+  group: [],
+  origin: [],
   someDogs: [],
   dog: {},
   adopted: [],
@@ -54,12 +51,7 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         dogs: action.payload,
-      };
-    case GET_SOME_DOGS:
-      return {
-        ...state,
-        someDogs: action.payload,
-        dog: {},
+        filtered: action.payload
       };
     case GET_DOG:
       return {
@@ -78,53 +70,34 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         temperament: action.payload,
       };
-    case ADD_SELECTED_FILTER:
+    case GET_GROUPS:
       return {
         ...state,
-        selectedFilters: [...state.selectedFilters, action.payload],
+        group: action.payload,
       };
-    case DELETE_SELECTED_FILTER:
+    case GET_ORIGINS:
       return {
         ...state,
-        selectedFilters: state.selectedFilters.filter(
-          (filter) =>
-            Object.values(filter)[0] !== Object.values(action.payload)[0]
-        ),
+        origin: action.payload,
       };
     case FILTER_DOGS:
       return {
         ...state,
-        filtered: state.dogs.filter((dog) =>
-          state.selectedFilters.every((filter) =>
-            dog[Object.keys(filter)[0]].includes(Object.values(filter)[0])
-          )
-        ),
+        filtered: action.payload.length > 0 ? state.dogs.filter((dog) => {
+            return action.payload.every((filter) => {
+              return dog[Object.keys(filter)[0]].includes(Object.values(filter)[0])
+            })
+        }) : state.dogs,
+        error: (action.payload.length > 0 && state.filtered.filter((dog) => {
+          return action.payload.every((filter) => {
+            return dog[Object.keys(filter)[0]].includes(Object.values(filter)[0])
+          })
+      }).length === 0) ? 'No dogs matching ' : false
       };
-    case FILTER_SOME_DOGS:
+    case SORT_DOGS:
       return {
         ...state,
-        filtered: state.someDogs.filter((dog) =>
-          state.selectedFilters.every((filter) =>
-            dog[Object.keys(filter)[0]].includes(Object.values(filter)[0])
-          )
-        ),
-      };
-    case SORT_DOGS_BY_NAME:
-      return {
-        ...state,
-        filtered: action.payload,
-        render: true,
-      };
-    case SORT_DOGS_BY_WEIGHT:
-      return {
-        ...state,
-        filtered: action.payload,
-        render: true,
-      };
-    case SET_FILTERED:
-      return {
-        ...state,
-        filtered: action.payload,
+        filtered:action.payload
       };
     case PAGINATION:
       return {
@@ -136,11 +109,6 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         render: false,
-      };
-    case CLEAN_SOME_DOGS:
-      return {
-        ...state,
-        someDogs: [],
       };
     case CLEAN_DOG:
       return {

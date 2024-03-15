@@ -10,10 +10,17 @@
 
 .filters {
     width: 100%;
-    margin-top:260px;
+    display:flex;
+    /* align-items: center; */
+    justify-content:space-evenly;
 }
 
-.filters_title, .filters_subtitle, .temperaments {
+.filter {
+    border: solid 1px;
+    border-radius: 0.2rem;
+    border-color:rgb(75, 81, 87);
+}
+/* .filters_title, .filters_subtitle, .temperaments {
     width: 100%;
     color:rgb(22, 50, 0)
 }
@@ -28,4 +35,4 @@
 
 .origin {
     margin:5px;
-}
+} */

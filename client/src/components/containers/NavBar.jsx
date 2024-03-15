@@ -10,13 +10,15 @@ export default function NavBar({onSearch}) {            //y esto?
     return (
         <nav>
       <ul className={style.navbar}>
+          <Link to='/home' className={style.navbar_link}>          
         <li className={style.navbar_logo}>
-          <img src={Logo} className={style.navbar_logo_img}/>
-          <div className={style.navbar_logo_text}>
-            <p style={{margin:'0'}}>Barkwise</p>
-            <p style={{margin:'0'}}>Alliance</p>
-          </div>
+            <img src={Logo} className={style.navbar_logo_img}/>
+            <div className={style.navbar_logo_text}>
+              <p style={{margin:'0'}}>Barkwise</p>
+              <p style={{margin:'0'}}>Alliance</p>
+            </div>
         </li>
+          </Link>
         <li style={{padding:'2rem'}}><Link to='/breeds' className={style.navbar_link}>DoggyPedia</Link></li>
         <li style={{padding:'2rem'}}><Link to='/matcher' className={style.navbar_link}>MatchCan</Link></li>
         <li style={{padding:'2rem'}}><Link to='/events' className={style.navbar_link}>Events</Link></li>
