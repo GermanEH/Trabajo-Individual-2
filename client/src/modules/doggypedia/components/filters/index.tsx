@@ -1,11 +1,11 @@
 import style from '../../../assets/styles/Filters.module.css'
-import { Temperaments } from './Temperaments.tsx'
-import { Origin } from './Origin.tsx'
-import Weigth from './Weigth.tsx'
-import Height from './Height.tsx'
-import LifeSpan from './LifeSpan.tsx'
-import Group from './Group.tsx'
-import Source from './Source.tsx'
+import { Temperaments } from './Temperaments'
+import { Origin } from './Origin'
+import Weigth from './Weigth'
+import Height from './Height'
+import LifeSpan from './LifeSpan'
+import Group from './Group'
+import Source from './Source'
 
 export default function Filters ({filters, setFilters, temperament, group}) {
     
@@ -15,13 +15,13 @@ export default function Filters ({filters, setFilters, temperament, group}) {
         {temperament && 
         <div className={style.filters}>
             {/* <h3 className={style.filters_title}>Filtrar por...</h3> */}
-                    <Group group={group} filters={filters}/>
                     <Temperaments temperament={temperament} filters={filters} setFilters={setFilters}/>
                     <Weigth/>
                     <Height/>
                     <LifeSpan/>
                     <Origin filters={filters} setFilters={setFilters}/>
                     <Source/>
+                    <Group group={group} filters={filters}/>
         </div>}
     </>
         // </div>

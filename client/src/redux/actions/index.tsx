@@ -1,4 +1,4 @@
-import helpHTTP from '../../helpers/helpHTTP.js';
+import helpHTTP from '../../helpers/helpHTTP';
 import axios from 'axios';
 
 import {
