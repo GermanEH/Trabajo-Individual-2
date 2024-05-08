@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import style from '../../assets/styles/DogDetail.module.css';
-import Loader from "./Loader.jsx"
+import Loader from "../../modules/core/components/Loader"
 import { getDogById, setFiltered, cleanDog } from "../../redux/actions/index.js";
 import { Link } from "react-router-dom";
 
