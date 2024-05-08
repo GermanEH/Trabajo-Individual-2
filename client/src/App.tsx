@@ -1,15 +1,15 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import style from './App.module.css';
-import Home from './pages/Home/Home.tsx'
-import Breeds from './pages/Breeds/Breeds.tsx'
-import Form from './pages/Form/Form.tsx';
-import MatchCan from './pages/MatchCan/MatchCan.tsx';
-import Events from './pages/Events/Events.tsx';
-import Profile from './pages/Profile/Profile.tsx';
-import DogDetail from './pages/DogDetail/DogDetail.tsx';
+import Home from './pages/Home'
+import Breeds from './pages/DoggyPedia'
+import Form from './pages/Form/Form';
+import MatchCan from './pages/MatchCan/MatchCan';
+import Events from './pages/Events/Events';
+import Profile from './pages/Profile/Profile';
+import DogDetail from './pages/DogDetail/DogDetail';
 import NotFound from './components/containers/NotFound.jsx';
-import NavBar from './components/containers/NavBar.jsx'
+import NavBar from './modules/core/components/NavBar.jsx'
 
 const App:React.FC = () => {
   return (

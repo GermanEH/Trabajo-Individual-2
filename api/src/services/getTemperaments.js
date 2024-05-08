@@ -11,7 +11,7 @@ export const getTemperamentsService = async () => {
             return await createTemperaments() 
                 
         } 
-
+        console.log(temperaments)
         return temperaments;
 
     } catch (error) {

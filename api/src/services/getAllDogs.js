@@ -33,9 +33,11 @@ export const getAllDogsService = async (name) => {
 
       const data = await getApiDogs()
 
-      dogs = await saveApiDogsToDatabase(data)
+      //We don't save api dogs to database because it's a requirement of the assignment not to do it.
 
-      return await checkForLocalDogs(name)
+      // dogs = await saveApiDogsToDatabase(data)
+
+      return data
 
     }
 

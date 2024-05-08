@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-const axiosFunction = async (props) => {
+export const axiosFunction = async (props) => {
   let { url, cbSuccess, arr, id } = props;
   try {
     const response = await axios.get(url);
@@ -12,5 +12,3 @@ const axiosFunction = async (props) => {
     console.log('done');
   }
 };
-
-module.exports = axiosFunction;
