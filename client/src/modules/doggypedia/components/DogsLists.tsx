@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import Loader from "../../core/components/Loader.js";
-import Pagination from "../../../components/renders/Pagination.tsx/index.js";
-import DogCard from "../renders/DogCard.jsx";
+import Pagination from "../../core/components/Pagination";
+import DogCard from "./DogCard.jsx";
 import Message from "../../../components/renders/Message.jsx"
 import { pagination, cleanError } from "../../../redux/actions/index.js";
-import style from '../../assets/styles/DogsLists.module.css' 
+import style from '@/assets/styles/DogsLists.module.css' 
 
 export const DogsList = ({setFilters, filtered, dispatch}) => {
 

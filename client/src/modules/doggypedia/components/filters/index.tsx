@@ -1,4 +1,4 @@
-import style from '../../../assets/styles/Filters.module.css'
+import style from '@/assets/styles/Filters.module.css'
 import { Temperaments } from './Temperaments'
 import { Origin } from './Origin'
 import Weigth from './Weigth'

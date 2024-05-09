@@ -1,8 +1,8 @@
 import React from 'react'
 import NavBar from '../../modules/core/components/NavBar'
-import style from './Home.module.css'
+import style from '@/assets/styles/Home.module.css'
 import {Link} from 'react-router-dom'
-import HeroImage from '../../assets/images/Hero_image_2.jpeg'
+import HeroImage from '@/assets/images/Hero_image_2.jpeg'
 
 const Home:React.FC = () => {
   return (
