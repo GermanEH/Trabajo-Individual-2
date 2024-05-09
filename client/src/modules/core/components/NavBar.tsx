@@ -1,8 +1,8 @@
 import {useLocation} from 'react-router';
-import style from '../../pages/Home/Home.module.css'
+import style from '@/pages/Home/Home.module.css'
 import {Link} from 'react-router-dom'
 import Logo from '../../assets/images/Barkwise_alliance_logo.jpg'
-import SearchBar from './SearchBar.jsx';
+import SearchBar from '../../doggypedia/components/SearchBar'
 
 export default function NavBar() {            //y esto?
     const location = useLocation()
