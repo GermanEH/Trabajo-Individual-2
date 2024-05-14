@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector} from 'react-redux'
-import style from '../../assets/styles/DogCard.module.css';
-import logo from '../../assets/images/huella_de_perro.png'
+import style from '@/assets/styles/DogCard.module.css';
+import logo from '@/assets/images/huella_de_perro.png'
 import { Link } from "react-router-dom";
-import { adoption } from "../../../redux/actions/index.js"
+import { adoption } from "@/redux/actions/index.js"
 
 export default function DogCard ({image, name, temperament, weight, id}) {
 
