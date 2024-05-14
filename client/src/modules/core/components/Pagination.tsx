@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import style from '../../assets/styles/Pagination.module.css'
-import logo from '../../assets/images/hueso_de_perro.png'
+import style from '@/assets/styles/Pagination.module.css'
+import logo from '@/assets/images/hueso_de_perro.png'
 
 export default function Pagination({currentPage, filtered, pagination, dispatch}) {
 
