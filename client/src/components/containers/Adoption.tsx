@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import style from '../../assets/styles/Adoption.module.css'
-import DogCard from '../renders/DogCard.jsx'
-import Pagination from '../renders/Pagination.tsx'
-import Message from '../renders/Message.jsx'
-import Loader from '../renders/Loader.jsx'
-import Filters from '../renders/Filters.jsx'
-import Sorters from '../renders/Sorters.jsx'
+import style from '@/assets/styles/Adoption.module.css'
+import DogCard from '@/modules/doggypedia/components/DogCard'
+import Pagination from '@/modules/core/components/Pagination'
+import Message from '@/components/renders/Message'
+import Loader from '@/modules/core/components/Loader'
+import Filters from '@/modules/doggypedia/components/filters'
+import Sorters from '@/modules/doggypedia/components/Sorters'
+
 import { cleanError, setFiltered, selectFilter, getTemperaments } from '../../redux/actions/index.js'
 
 function DogAdoption() {

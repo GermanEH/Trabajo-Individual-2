@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../../assets/styles/Filters.module.css'
+import style from '@/assets/styles/Filters.module.css'
 
 const Group = ({group, setFilters}) => {
   return (

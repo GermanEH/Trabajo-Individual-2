@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getDogByName } from '../../../redux/actions/index.js';
-import style from '../../assets/styles/SearchBar.module.css';
-import logo from '../../assets/images/lupa.png'
+import { getDogByName } from '@/redux/actions/index.js';
+import style from '@/assets/styles/SearchBar.module.css';
+import logo from '@/assets/images/lupa.png'
 
 export default function SearchBar () {
     const dogs = useSelector(state => state.dogs)

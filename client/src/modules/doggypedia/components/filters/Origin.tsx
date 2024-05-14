@@ -1,4 +1,4 @@
-import style from '../../../assets/styles/Filters.module.css'
+import style from '@/assets/styles/Filters.module.css'
 import { FaLocationDot } from "react-icons/fa6";
 
 export const Origin = ({filters, setFilters}) => {

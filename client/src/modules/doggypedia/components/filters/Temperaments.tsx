@@ -1,4 +1,4 @@
-import style from '../../../assets/styles/Filters.module.css'
+import style from '@/assets/styles/Filters.module.css'
 import { RiBearSmileLine } from "react-icons/ri";
 
 
